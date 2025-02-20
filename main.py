@@ -13,8 +13,9 @@ if st.button("Convert"):
         with st.spinner("Converting... Please wait ⏳"):
             pashto_text = roman_to_pashto(roman_text)
         st.success("✅ Converted Text:")
-        # Display the converted text with a copy-to-clipboard button
-        st.code(pashto_text, language='')  # 'language' can be set to '' for plain text
+        
+        st.markdown(f'<pre style="font-size: 20px;">{pashto_text}</pre>', unsafe_allow_html=True)
+
     else:
         st.warning("⚠️ Please enter some text to convert.")
 
