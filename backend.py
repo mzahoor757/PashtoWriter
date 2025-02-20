@@ -8,7 +8,7 @@ import streamlit as st
 load_dotenv()
 OPEN_AI_KEY = os.getenv("OPEN_AI_KEY")
 
-secret_key = st.secret.get("OPEN_AI_KEY", "")
+secret_key = st.secret["OPEN_AI_KEY"]
 
 openai_model = ChatOpenAI(api_key=secret_key, model_name="gpt-4o")
 
