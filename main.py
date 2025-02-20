@@ -12,7 +12,7 @@ roman_text = st.text_area("Enter Roman Pashto text:", placeholder="Sanga ye?")
 
 if st.button("Convert"):
     if roman_text.strip():
-        with st.spinner("Converting... Please wait ⏳"):
+        with st.spinner("Converting... Sirf Tamasha Kawa Janana XD 😜"):
             pashto_text = roman_to_pashto(roman_text)
         st.success("✅ Converted Text:")
         
