@@ -1,13 +1,16 @@
-from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 from dotenv import load_dotenv
 import os
 import time
+import streamlit as st
 
 load_dotenv()
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+OPEN_AI_KEY = os.getenv("OPEN_AI_KEY")
 
-model = ChatGroq(model_name = "llama-3.3-70b-versatile", api_key=GROQ_API_KEY)
+secret_key = st.secret.get("OPEN_AI_KEY", "")
+
+openai_model = ChatOpenAI(api_key=secret_key, model_name="gpt-4o")
 
 sysMessage = """
     You are a Native Pashto Speaker who converts Roman Pashto into proper Pashto text.
@@ -26,7 +29,7 @@ def roman_to_pashto(text, max_retries=3, delay=2):
     
     for _ in range(max_retries):
         try:
-            response = model([
+            response = openai_model.invoke([
                 SystemMessage(content="You are a Roman Pashto to Proper Pashto converter."),
                 HumanMessage(content=prompt)
             ])
