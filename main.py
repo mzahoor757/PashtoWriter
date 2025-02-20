@@ -3,6 +3,8 @@ from backend import roman_to_pashto
 
 st.set_page_config(page_title="Roman Pashto to Proper Pashto Converter", layout="centered")
 
+st.image("peshawar.jpg", use_container_width=True)
+
 st.title("📝 Roman Pashto ➝ Proper Pashto Converter")
 
 # User input
