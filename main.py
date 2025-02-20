@@ -1,11 +1,11 @@
 import streamlit as st
 from backend import roman_to_pashto
 
-st.set_page_config(page_title="Roman Pashto to Proper Pashto Converter", layout="centered")
+st.set_page_config(page_title="Roman Pashto to Native Pashto Converter", layout="centered")
 
 st.image("peshawar.jpg", use_container_width=True)
 
-st.title("📝 Roman Pashto ➝ Proper Pashto Converter")
+st.title("📝 Roman Pashto ➝ Native Pashto Converter")
 
 # User input
 roman_text = st.text_area("Enter Roman Pashto text:", placeholder="Sanga ye?")
